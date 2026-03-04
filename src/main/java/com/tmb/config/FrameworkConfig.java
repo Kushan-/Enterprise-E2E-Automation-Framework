@@ -1,7 +1,9 @@
 package com.tmb.config;
 
 import com.tmb.config.coverters.StringToBrowserTypeConverter;
+import com.tmb.enums.BrowserRemoteModeType;
 import com.tmb.enums.BrowserType;
+import com.tmb.enums.RunModeBrowserType;
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
@@ -19,13 +21,10 @@ public interface FrameworkConfig extends Config {
     @ConverterClass(StringToBrowserTypeConverter.class)
     BrowserType browser();
 
-    @DefaultValue("staging")
-    String environment();
+    @Key("runModeBroswer")
+    RunModeBrowserType browserRunMode();
 
-    @Key("${environment}.username")
-    String username();
-
-    @Key("${environment}.url")
-    String url();
+    @Key("browserRemoteMode")
+    BrowserRemoteModeType browserRemoteMode();
 }
 
