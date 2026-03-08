@@ -26,17 +26,4 @@ public final class RemoteDriverFactory {
     public static WebDriver getDriver(BrowserRemoteModeType browserRemoteModeType, BrowserType browserType){
         return BrowserRemoteModeTypeMap.get(browserRemoteModeType).apply(browserType);
     }
-//
-//    public static WebDriver getDriver(BrowserRemoteModeType browserRemoteModeType, BrowserType browserType){
-//
-//        if( browserRemoteModeType == BrowserRemoteModeType.SELENIUM){
-//            return SeleniumGridFactory.getDriver(browserType);
-//        }else if (browserRemoteModeType == BrowserRemoteModeType.SELENOID){
-//            return SelenoidGridFactory.getDriver(browserType);
-//        }else if(browserRemoteModeType == BrowserRemoteModeType.BROWSER_STACK){
-//            return BrowserStackFactory.getDriver(browserType);
-//
-//        }
-//        return null;
-//    }
 }

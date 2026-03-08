@@ -14,8 +14,6 @@ import java.util.function.Supplier;
 public final class LocalDriverFactory {
 
     private LocalDriverFactory(){}
-//    private static final Map<BrowserType, Supplier<WebDriver>> MAP =
-//            new EnumMap<>(BrowserType.class);
 
     private static final Map<BrowserType, Supplier<WebDriver>> BrowserTypeMap = new EnumMap<>(BrowserType.class);
 
@@ -27,14 +25,6 @@ public final class LocalDriverFactory {
     public static WebDriver getDriver(BrowserType browserType){
         return BrowserTypeMap.get(browserType).get();
     }
-
-
-//    public static WebDriver getDriver(){
-//        WebDriver driver = null;
-//        if(isBrowserChrome()) driver = ChromeManager.getDriver();
-//        else driver = FireFoxManager.getDriver();
-//        return driver;
-//    }
 
     private static boolean isBrowserChrome() {
         return ConfigFactory.getConfig()
